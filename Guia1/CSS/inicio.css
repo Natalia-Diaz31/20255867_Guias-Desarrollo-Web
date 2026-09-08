@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Playfair+Display:wght@600&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#faf3f5;
+    color:#3b2630;
+    font-family:"Montserrat", sans-serif;
+}
+
+
+header{
+    background:#7d1835;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+
+header h1{
+    font-family:"Playfair Display", serif;
+    font-size:55px;
+    margin:0;
+    letter-spacing:3px;
+}
+
+
+header p{
+    font-size:18px;
+    margin-top:15px;
+}
+
+
+nav{
+    background:#24161b;
+    padding:18px;
+    text-align:center;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 25px;
+    font-weight:bold;
+}
+
+
+nav a:hover{
+    color:#e89ab0;
+}
+
+
+section{
+    width:80%;
+    margin:45px auto;
+}
+
+
+h2{
+    text-align:center;
+    color:#9d2146;
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+
+.contenedor{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    max-width:800px;
+    margin:auto;
+}
+
+
+.contenedor a{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    text-decoration:none;
+    color:#9d2146;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+
+.contenedor a:hover{
+    transform:translateY(-5px);
+    background:#9d2146;
+    color:white;
+}
+
+
+footer{
+    background:#24161b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
