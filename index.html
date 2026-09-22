@@ -6,97 +6,137 @@
     <title>Guías - Desarrollo Web I</title>
 
     <style>
-    *{
-        box-sizing:border-box;
-    }
+        :root {
+            --color-fondo: #fdf7ff;
+            --color-superficie: #ffffff;
+            --color-superficie-alt: #f5eefe;
+            --color-principal: #b57edc;
+            --color-principal-oscuro: #8e5db7;
+            --color-secundario: #e8d5ff;
+            --color-texto: #4b3b5a;
+            --color-texto-tenue: #7a6a89;
+            --color-borde: #eadcf7;
+            --color-sombra: rgba(181, 126, 220, 0.18);
+        }
 
-    body{
-        margin:0;
-        font-family:Arial, Helvetica, sans-serif;
-        background:#f4f7f9;
-        color:#1e293b;
-    }
+        *{
+            box-sizing:border-box;
+        }
 
-    header{
-        background:#064e3b;
-        color:white;
-        text-align:center;
-        padding:45px 20px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    header h1{
-        font-size:45px;
-        margin:0 0 10px;
-    }
+        body{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            background:var(--color-fondo);
+            color:var(--color-texto);
+        }
 
-    header p{
-        font-size:18px;
-    }
+        header{
+            background: linear-gradient(135deg, #c9a0ff, #b57edc, #e0b7ff);
+            color:white;
+            text-align:center;
+            padding:55px 20px;
+        }
 
-    nav{
-        background:white;
-        padding:20px;
-        text-align:center;
-        box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    }
+        header h1{
+            font-size:48px;
+            margin:0 0 10px;
+        }
 
-    nav a{
-        text-decoration:none;
-        color:#059669;
-        font-weight:bold;
-        margin:0 15px;
-    }
+        header p{
+            font-size:18px;
+            margin:0;
+        }
 
-    section{
-        width:85%;
-        margin:40px auto;
-    }
+        nav{
+            background:rgba(255, 255, 255, 0.95);
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--color-borde);
+        }
 
-    h2{
-        color:#064e3b;
-        border-bottom:3px solid #10b981;
-        padding-bottom:10px;
-    }
+        nav > a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-principal-oscuro);
+            font-weight: bold;
+            margin: 0 14px;
+            padding: 10px 18px;
+            border-radius: 20px;
+            background: var(--color-superficie-alt);
+        }
 
-    .contenedor{
-        display:flex;
-        flex-wrap:wrap;
-        gap:25px;
-    }
+        nav > a:hover {
+            background: var(--color-secundario);
+            color: var(--color-principal-oscuro);
+        }
 
-    .card{
-        background:white;
-        width:300px;
-        padding:25px;
-        border-radius:15px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.12);
-    }
+        section{
+            width:86%;
+            max-width:1200px;
+            margin:40px auto;
+        }
 
-    .card h3{
-        color:#047857;
-    }
+        h2{
+            color: var(--color-principal-oscuro);
+            border-bottom: 3px solid var(--color-principal);
+            padding-bottom:10px;
+            margin-bottom:20px; 
+        }
 
-    .card a{
-        display:inline-block;
-        margin-top:15px;
-        background:#10b981;
-        color:white;
-        padding:10px 18px;
-        border-radius:8px;
-        text-decoration:none;
-    }
+        .contenedor{
+            display:flex;
+            flex-wrap:wrap;
+            gap:25px;
+        }
 
-    .card a:hover{
-        background:#047857;
-    }
+        .card{
+            background: var(--color-superficie);
+            width:300px;
+            padding:25px;
+            border-radius:18px;
+            box-shadow:0 8px 18px var(--color-sombra);
+            border:1px solid var(--color-borde);
+        }
 
-    footer{
-        background:#064e3b;
-        color:white;
-        text-align:center;
-        padding:20px;
-        margin-top:50px;
-    }
+        .card h3{
+            color: var(--color-principal-oscuro);
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--color-texto-tenue);
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        .card a{
+            display:inline-block;
+            margin-top:18px;
+            background:var(--color-principal);
+            color:white;
+            padding:10px 18px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .card a:hover{
+            background:var(--color-principal-oscuro);
+        }
+
+        footer{
+            background: linear-gradient(135deg, #c9a0ff, #b57edc);
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 50px;
+        }
     </style>
 </head>
 
@@ -145,7 +185,7 @@
     </section>
 
     <section id="guia2">
-        <h2>Guía 2</h2>
+        <h2>Guía 2: Selectores CSS avanzados y modelo de caja</h2>
 
         <div class="contenedor">
 
@@ -166,7 +206,7 @@
     </section>
 
     <footer>
-        <p>Desarrollo Web I - ESEN</p>
+        <p>Desarrollo Web I - Natalia Diaz</p>
     </footer>
 
 </body>
