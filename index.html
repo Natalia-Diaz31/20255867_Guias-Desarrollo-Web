@@ -1,170 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía 1 - Desarrollo Web I</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías - Desarrollo Web I</title>
 
-<style>
-*{
-    box-sizing:border-box;
-}
+    <style>
+    *{
+        box-sizing:border-box;
+    }
 
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f7f9;
-    color:#1e293b;
-}
+    body{
+        margin:0;
+        font-family:Arial, Helvetica, sans-serif;
+        background:#f4f7f9;
+        color:#1e293b;
+    }
 
-header{
-    background:#064e3b;
-    color:white;
-    text-align:center;
-    padding:45px 20px;
-}
+    header{
+        background:#064e3b;
+        color:white;
+        text-align:center;
+        padding:45px 20px;
+    }
 
-header h1{
-    font-size:45px;
-    margin:0 0 10px;
-}
+    header h1{
+        font-size:45px;
+        margin:0 0 10px;
+    }
 
-header p{
-    font-size:18px;
-}
+    header p{
+        font-size:18px;
+    }
 
-nav{
-    background:white;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
+    nav{
+        background:white;
+        padding:20px;
+        text-align:center;
+        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
 
-nav a{
-    text-decoration:none;
-    color:#059669;
-    font-weight:bold;
-    margin:0 15px;
-}
+    nav a{
+        text-decoration:none;
+        color:#059669;
+        font-weight:bold;
+        margin:0 15px;
+    }
 
-section{
-    width:85%;
-    margin:40px auto;
-}
+    section{
+        width:85%;
+        margin:40px auto;
+    }
 
-h2{
-    color:#064e3b;
-    border-bottom:3px solid #10b981;
-    padding-bottom:10px;
-}
+    h2{
+        color:#064e3b;
+        border-bottom:3px solid #10b981;
+        padding-bottom:10px;
+    }
 
-.contenedor{
-    display:flex;
-    flex-wrap:wrap;
-    gap:25px;
-}
+    .contenedor{
+        display:flex;
+        flex-wrap:wrap;
+        gap:25px;
+    }
 
-.card{
-    background:white;
-    width:300px;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.12);
-}
+    .card{
+        background:white;
+        width:300px;
+        padding:25px;
+        border-radius:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.12);
+    }
 
-.card h3{
-    color:#047857;
-}
+    .card h3{
+        color:#047857;
+    }
 
-.card a{
-    display:inline-block;
-    margin-top:15px;
-    background:#10b981;
-    color:white;
-    padding:10px 18px;
-    border-radius:8px;
-    text-decoration:none;
-}
+    .card a{
+        display:inline-block;
+        margin-top:15px;
+        background:#10b981;
+        color:white;
+        padding:10px 18px;
+        border-radius:8px;
+        text-decoration:none;
+    }
 
-.card a:hover{
-    background:#047857;
-}
+    .card a:hover{
+        background:#047857;
+    }
 
-footer{
-    background:#064e3b;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
-}
-</style>
-
+    footer{
+        background:#064e3b;
+        color:white;
+        text-align:center;
+        padding:20px;
+        margin-top:50px;
+    }
+    </style>
 </head>
 
 <body>
+    <header>
+        <h1>Guías - Desarrollo Web I</h1>
+        <p>Ejemplos y ejercicios de Desarrollo Web I</p>
+    </header>
 
-<header>
-<h1>Guía 1</h1>
-<p>Ejemplos y ejercicios de Desarrollo Web I</p>
-</header>
+    <nav>
+        <a href="#guia1">Guía 1</a>
+        <a href="#guia2">Guía 2</a>
+    </nav>
 
-<nav>
-<a href="#ejemplos">Ejemplos</a>
-<a href="#ejercicio">Ejercicio complementario</a>
-</nav>
+    <section id="guia1">
+        <h2>Guía 1: Introducción a HTML y CSS</h2>
 
+        <div class="contenedor">
 
-<section id="ejemplos">
+            <div class="card">
+                <h3>Ejemplo 1</h3>
+                <p>Estilos embebidos en HTML.</p>
+                <a href="Guia1/estilos_embebidos.html">Ver ejemplo</a>
+            </div>
 
-<h2>Ejemplos de la guía</h2>
+            <div class="card">
+                <h3>Ejemplo 2</h3>
+                <p>Uso de etiqueta style.</p>
+                <a href="Guia1/ejemplo2.html">Ver ejemplo</a>
+            </div>
 
-<div class="contenedor">
+            <div class="card">
+                <h3>Ejemplo 3</h3>
+                <p>Página sobre países de Centroamérica.</p>
+                <a href="Guia1/paises.html">Ver ejemplo</a>
+            </div>
 
-<div class="card">
-<h3>Ejemplo 1</h3>
-<p>Estilos embebidos en HTML.</p>
-<a href="Guia1/estilos_embebidos.html">Ver ejemplo</a>
-</div>
+            <div class="card">
+                <h3>Página sobre NANA - Anime</h3>
+                <p>Página realizada como ejercicio complementario.</p>
+                <a href="Guia1/NANA.html">Ver página</a>
+            </div>
 
+        </div>
 
-<div class="card">
-<h3>Ejemplo 2</h3>
-<p>Uso de etiqueta style.</p>
-<a href="Guia1/ejemplo2.html">Ver ejemplo</a>
-</div>
+    </section>
 
+    <section id="guia2">
+        <h2>Guía 2</h2>
 
-<div class="card">
-<h3>Ejemplo 3</h3>
-<p>Página sobre países de Centroamérica.</p>
-<a href="Guia1/paises.html">Ver ejemplo</a>
-</div>
+        <div class="contenedor">
 
-</div>
+            <div class="card">
+                <h3>Ejercicio 1 - Altamar</h3>
+                <p>Práctica de selectores CSS avanzados, pseudo-clases y pseudo-elementos.</p>
+                <a href="20255867_Guia2/pelicula.html">Ver ejemplo</a>
+            </div>
 
-</section>
+            <div class="card">
+                <h3>Ejercicio 2 - Tablero de damas</h3>
+                <p>Práctica de Flexbox y la pseudo-clase :nth-child().</p>
+                <a href="20255867_Guia2/tablero.html">Ver ejemplo</a>
+            </div>
 
+        </div>
 
-<section id="ejercicio">
+    </section>
 
-<h2>Ejercicio complementario</h2>
-
-<div class="contenedor">
-
-<div class="card">
-<h3>Página sobre NANA - Anime</h3>
-<p>Página realizada como ejercicio complementario.</p>
-<a href="Guia1/NANA.html">Ver página</a>
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-<p>Desarrollo Web I - ESEN</p>
-</footer>
+    <footer>
+        <p>Desarrollo Web I - ESEN</p>
+    </footer>
 
 </body>
+
 </html>
