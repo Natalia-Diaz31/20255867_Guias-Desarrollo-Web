@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* ===== Variables ===== */
-
 :root {
     --fondo: #fff9ff;
     --superficie: #ffffff;
@@ -24,9 +22,6 @@
     --fuente-texto: "Poppins", sans-serif;
 }
 
-
-/* ===== Configuración general ===== */
-
 * {
     box-sizing: border-box;
 }
@@ -42,9 +37,6 @@ body {
     color: var(--texto);
     font-family: var(--fuente-texto);
 }
-
-
-/* ===== Hero ===== */
 
 .hero {
     background-image:
@@ -148,13 +140,9 @@ h1 {
     font-size: 0.8rem;
 }
 
-/* Selector adyacente */
 .tag + .tag {
     margin-left: 8px;
 }
-
-
-/* ===== Navegación ===== */
 
 nav {
     display: flex;
@@ -171,7 +159,6 @@ nav {
         0 3px 12px rgba(111, 70, 143, 0.06);
 }
 
-/* Selector de hijos */
 nav > a {
     color: var(--morado);
 
@@ -193,9 +180,6 @@ nav > a:hover {
 nav > a:active {
     color: var(--texto);
 }
-
-
-/* ===== Contenido general ===== */
 
 .wrapper {
     width: 86%;
@@ -226,7 +210,7 @@ h2 {
     padding-bottom: 12px;
 }
 
-/* Selector descendiente */
+
 .bloque p {
     line-height: 1.8;
 
@@ -238,7 +222,7 @@ h2 {
 }
 
 
-/* ===== Sobre mí ===== */
+
 
 .sobre-mi-contenido {
     display: flex;
@@ -261,7 +245,7 @@ h2 {
         0 15px 35px rgba(111, 70, 143, 0.13);
 }
 
-/* first-child + pseudo-elemento */
+
 .sobre-mi-texto p:first-child::first-letter {
     color: var(--morado);
 
@@ -270,8 +254,6 @@ h2 {
     font-size: 2.2rem;
 }
 
-
-/* ===== Familia ===== */
 
 .galeria-familia {
     display: flex;
@@ -312,9 +294,6 @@ h2 {
     color: var(--morado-oscuro);
 }
 
-
-/* ===== Gustos ===== */
-
 .tarjetas {
     display: flex;
 
@@ -333,6 +312,10 @@ h2 {
     border-radius: 18px;
 
     padding: 25px;
+
+    height: fit-content;
+    
+    align-self: flex-start;
 
     box-shadow:
         0 10px 25px rgba(111, 70, 143, 0.07);
@@ -353,9 +336,6 @@ h2 {
 
     font-size: 1.5rem;
 }
-
-
-/* ===== Personas importantes ===== */
 
 .galeria-personas {
     display: flex;
@@ -396,7 +376,6 @@ h2 {
 }
 
 
-/* ===== Mascotas ===== */
 
 .mascotas-contenido {
     display: flex;
@@ -432,9 +411,6 @@ h2 {
     font-size: 1.4rem;
 }
 
-
-/* ===== Historia académica ===== */
-
 .linea-tiempo article {
     display: flex;
 
@@ -460,13 +436,9 @@ h2 {
     margin: 0;
 }
 
-/* Selector adyacente */
 .linea-tiempo article + article {
     margin-top: 8px;
 }
-
-
-/* ===== Experiencias ===== */
 
 .experiencia-principal {
     display: flex;
@@ -523,9 +495,6 @@ h2 {
     color: var(--morado-oscuro);
 }
 
-
-/* ===== Metas ===== */
-
 .metas {
     text-align: center;
 
@@ -561,7 +530,6 @@ h2 {
     font-size: 1.3rem;
 }
 
-/* Selector de atributo */
 a[href^="https"] {
     display: inline-block;
 }
@@ -585,9 +553,6 @@ a[href^="https"] {
 .metas a[href^="https"]:hover {
     background-color: var(--morado-oscuro);
 }
-
-
-/* ===== Footer ===== */
 
 footer {
     margin-top: 70px;
