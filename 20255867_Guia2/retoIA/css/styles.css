@@ -1,0 +1,939 @@
+/* =================================================================
+   AINSA, S.A. de C.V. — Hoja de estilos compartida
+   Sistema visual adaptado de Tomorro (Refero Styles) al contexto
+   de una empresa química e industrial salvadoreña.
+   ================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Boldonse&display=swap');
+
+/* -----------------------------------------------------------------
+   1. VARIABLES CSS (design tokens de Tomorro, adaptados a AINSA)
+   ----------------------------------------------------------------- */
+:root {
+  /* Colores — superficies */
+  --forest-depths: #122314;   /* fondo oscuro: suelo / industria */
+  --pure-white: #ffffff;      /* fondo claro: superficie limpia */
+  --bone-white: #f2f5eb;      /* tarjetas sobre fondo claro */
+
+  /* Colores — acción y acento */
+  --electric-sprout: #68ef3f; /* único color de acción */
+  --deep-verdant: #26a200;    /* acento secundario, hover de enlaces */
+  --sprout-wash: #e7f9dd;     /* fondo de badges suaves */
+
+  /* Colores — texto y bordes */
+  --onyx-olive: #30322a;      /* texto principal sobre claro */
+  --lichen-sage: #7e8371;     /* texto secundario / muted */
+  --pale-fern: #b7bda5;       /* bordes y texto sobre oscuro */
+  --moss-shadow: #273f2b;     /* texto y borde, nunca fondo */
+  --soft-mist: #dcdfe3;       /* líneas divisorias neutras */
+  --cool-stone: #d6d6d6;      /* superficies deshabilitadas */
+
+  /* Tipografía */
+  --font-display: 'Boldonse', 'Archivo Black', sans-serif;   /* sustituto de Ozik */
+  --font-ui: 'Inter', ui-sans-serif, system-ui, sans-serif;   /* sustituto de Aeonik */
+  --font-editorial: 'Instrument Serif', Georgia, serif;
+
+  /* Espaciado — ritmo de 8px */
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* Radios */
+  --radius-nav: 28px;
+  --radius-card: 20px;
+  --radius-badge: 999px;
+  --radius-input: 24px;
+  --radius-btn-compact: 8px;
+  --radius-btn-pill: 28px;
+
+  /* Layout */
+  --max-width: 1200px;
+}
+
+/* -----------------------------------------------------------------
+   2. RESET Y BASE
+   ----------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--onyx-olive);
+  background-color: var(--pure-white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+}
+
+/* -----------------------------------------------------------------
+   3. TIPOGRAFÍA
+   ----------------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Boldonse solo tiene un peso, ya es muy compacta */
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--onyx-olive);
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-family: var(--font-ui);
+  font-weight: 400;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--electric-sprout);
+}
+
+.section-label {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--lichen-sage);
+  margin-bottom: var(--space-16);
+  display: inline-block;
+}
+
+.section-intro {
+  max-width: 640px;
+  color: var(--lichen-sage);
+  font-size: 18px;
+  margin-top: var(--space-16);
+}
+
+/* -----------------------------------------------------------------
+   4. NAVEGACIÓN — Floating Pill Navigation (adaptada de Tomorro)
+   ----------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: var(--space-16);
+  z-index: 100;
+  padding: 0 var(--space-16);
+}
+
+.nav-pill {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background-color: rgba(18, 35, 20, 0.92);
+  border-radius: var(--radius-nav);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-24);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--pure-white);
+}
+
+.brand span {
+  color: var(--electric-sprout);
+}
+
+.main-nav {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--pale-fern);
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-btn-compact);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: var(--pure-white);
+  background-color: var(--moss-shadow);
+}
+
+.nav-cta {
+  background-color: var(--electric-sprout);
+  color: var(--onyx-olive);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 14px;
+  padding: var(--space-8) var(--space-24);
+  border-radius: var(--radius-btn-pill);
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* -----------------------------------------------------------------
+   5. BOTONES
+   ----------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 15px;
+  padding: var(--space-16) var(--space-32);
+  border-radius: var(--radius-btn-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--electric-sprout);
+  color: var(--onyx-olive);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: var(--deep-verdant);
+  color: var(--pure-white);
+}
+
+.btn-secondary-dark {
+  background-color: transparent;
+  border-color: var(--pale-fern);
+  color: var(--pure-white);
+}
+
+.btn-secondary-dark:hover {
+  border-color: var(--pure-white);
+}
+
+.btn-secondary-light {
+  background-color: transparent;
+  border-color: var(--onyx-olive);
+  color: var(--onyx-olive);
+}
+
+.btn-secondary-light:hover {
+  border-color: var(--electric-sprout);
+  background-color: var(--sprout-wash);
+}
+
+/* -----------------------------------------------------------------
+   6. BADGES
+   ----------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 12px;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-badge);
+}
+
+.badge-dark {
+  background-color: rgba(104, 239, 63, 0.12);
+  border: 1px solid var(--lichen-sage);
+  color: var(--electric-sprout);
+}
+
+.badge-light {
+  background-color: var(--sprout-wash);
+  color: var(--moss-shadow);
+}
+
+/* -----------------------------------------------------------------
+   7. SECCIONES — superficies alternadas
+   ----------------------------------------------------------------- */
+.section {
+  padding: var(--space-80) 0;
+}
+
+.section-dark {
+  background-color: var(--forest-depths);
+  color: var(--pure-white);
+}
+
+.section-dark h2,
+.section-dark h3 {
+  color: var(--pure-white);
+}
+
+.section-dark .section-intro {
+  color: var(--pale-fern);
+}
+
+.section-light {
+  background-color: var(--pure-white);
+}
+
+.section-bone {
+  background-color: var(--bone-white);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-56);
+}
+
+.section-header.align-left {
+  text-align: left;
+  margin: 0 0 var(--space-56);
+}
+
+/* -----------------------------------------------------------------
+   8. HERO (index.html)
+   ----------------------------------------------------------------- */
+.hero {
+  background-color: var(--forest-depths);
+  color: var(--pure-white);
+  padding: var(--space-64) 0 var(--space-80);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-64);
+  align-items: center;
+}
+
+.hero-copy h1 {
+  color: var(--pure-white);
+  font-size: 52px;
+  margin: var(--space-24) 0 var(--space-24);
+}
+
+.hero-copy h1 span {
+  color: var(--electric-sprout);
+}
+
+.hero-copy p {
+  color: var(--pale-fern);
+  font-size: 18px;
+  max-width: 520px;
+  margin-bottom: var(--space-32);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+
+.hero-media {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--moss-shadow);
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -----------------------------------------------------------------
+   9. NUESTRA EMPRESA — historia / misión / visión / valores
+   ----------------------------------------------------------------- */
+.empresa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-24);
+}
+
+.empresa-card {
+  background-color: var(--bone-white);
+  border: 1px solid var(--soft-mist);
+  border-radius: var(--radius-card);
+  padding: var(--space-32);
+}
+
+.empresa-card h3 {
+  margin-bottom: var(--space-16);
+}
+
+.empresa-card p {
+  color: var(--onyx-olive);
+}
+
+.valores-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+}
+
+.valores-list li {
+  background-color: var(--sprout-wash);
+  color: var(--moss-shadow);
+  font-size: 13px;
+  font-weight: 600;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-badge);
+}
+
+/* -----------------------------------------------------------------
+   10. LÍNEAS DE PRODUCTOS — tarjetas
+   ----------------------------------------------------------------- */
+.lineas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+}
+
+.linea-card {
+  background-color: var(--pure-white);
+  border: 1px solid var(--soft-mist);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* TRANSICIÓN PARA DEMOSTRACIÓN DEL VIDEO */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.linea-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--electric-sprout);
+}
+
+.linea-card__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--bone-white);
+}
+
+.linea-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.linea-card__body {
+  padding: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex: 1;
+}
+
+.linea-card__body p {
+  color: var(--lichen-sage);
+  font-size: 14px;
+  flex: 1;
+}
+
+.linea-card__link {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--deep-verdant);
+  border-bottom: 1px solid var(--mist-green, var(--soft-mist));
+  align-self: flex-start;
+  margin-top: var(--space-8);
+}
+
+.linea-card__link:hover {
+  color: var(--onyx-olive);
+  border-color: var(--electric-sprout);
+}
+
+/* -----------------------------------------------------------------
+   11. SERVICIOS / CAPACIDADES
+   ----------------------------------------------------------------- */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-24);
+}
+
+.servicio-card {
+  background-color: rgba(242, 245, 235, 0.06);
+  border: 1px solid var(--moss-shadow);
+  border-radius: var(--radius-card);
+  padding: var(--space-24);
+}
+
+.servicio-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-btn-compact);
+  background-color: var(--electric-sprout);
+  color: var(--onyx-olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  margin-bottom: var(--space-16);
+}
+
+.servicio-card h3 {
+  margin-bottom: var(--space-8);
+}
+
+.servicio-card p {
+  color: var(--pale-fern);
+  font-size: 14px;
+}
+
+/* -----------------------------------------------------------------
+   12. CALIDAD Y CONFIANZA — indicadores
+   ----------------------------------------------------------------- */
+.indicadores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-24);
+  margin-top: var(--space-56);
+}
+
+.indicador {
+  border-top: 1px solid var(--soft-mist);
+  padding-top: var(--space-16);
+}
+
+.indicador strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--deep-verdant);
+}
+
+.indicador span {
+  font-size: 14px;
+  color: var(--lichen-sage);
+}
+
+/* -----------------------------------------------------------------
+   13. CTA FINAL
+   ----------------------------------------------------------------- */
+.cta-final {
+  background-color: var(--bone-white);
+  border-radius: var(--radius-card);
+  padding: var(--space-56);
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.cta-final h2 {
+  margin-bottom: var(--space-16);
+}
+
+.cta-final p {
+  color: var(--lichen-sage);
+  max-width: 560px;
+  margin: 0 auto var(--space-32);
+}
+
+.cta-final-actions {
+  display: flex;
+  gap: var(--space-16);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* -----------------------------------------------------------------
+   14. FOOTER
+   ----------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--forest-depths);
+  color: var(--pale-fern);
+  padding: var(--space-64) 0 var(--space-32);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-32);
+  padding-bottom: var(--space-40);
+  border-bottom: 1px solid var(--moss-shadow);
+}
+
+.footer-brand .brand {
+  margin-bottom: var(--space-16);
+}
+
+.footer-brand p {
+  font-size: 14px;
+  max-width: 320px;
+  color: var(--pale-fern);
+}
+
+.footer-col h3 {
+  color: var(--pure-white);
+  font-size: 14px;
+  margin-bottom: var(--space-16);
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.footer-col a,
+.footer-col address,
+.footer-col p {
+  font-size: 14px;
+  color: var(--pale-fern);
+  font-style: normal;
+}
+
+.footer-col a:hover {
+  color: var(--electric-sprout);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-24);
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-16);
+}
+
+/* -----------------------------------------------------------------
+   15. PÁGINA INTERIOR — encabezado (productos.html / contacto.html)
+   ----------------------------------------------------------------- */
+.page-header {
+  background-color: var(--forest-depths);
+  color: var(--pure-white);
+  padding: var(--space-64) 0 var(--space-56);
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: var(--lichen-sage);
+  margin-bottom: var(--space-16);
+}
+
+.breadcrumb a:hover {
+  color: var(--electric-sprout);
+}
+
+.page-header h1 {
+  color: var(--pure-white);
+  font-size: 40px;
+  margin-bottom: var(--space-16);
+}
+
+.page-header p {
+  color: var(--pale-fern);
+  max-width: 620px;
+  font-size: 18px;
+}
+
+/* -----------------------------------------------------------------
+   16. PRODUCTOS — línea destacada y fichas de producto
+   ----------------------------------------------------------------- */
+.linea-detalle {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-56);
+  align-items: center;
+  padding: var(--space-56) 0;
+  border-bottom: 1px solid var(--soft-mist);
+}
+
+.linea-detalle__media {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--bone-white);
+}
+
+.linea-detalle__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.linea-detalle__body h2 {
+  margin: var(--space-16) 0;
+}
+
+.linea-detalle__body p {
+  color: var(--lichen-sage);
+  margin-bottom: var(--space-24);
+}
+
+.producto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.producto-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--space-16);
+  background-color: var(--pure-white);
+  border: 1px solid var(--soft-mist);
+  border-radius: var(--radius-card);
+  padding: var(--space-16);
+}
+
+.producto-card__media {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--space-16);
+  overflow: hidden;
+  background-color: var(--bone-white);
+}
+
+.producto-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.producto-card h3 {
+  font-size: 15px;
+  margin-bottom: var(--space-8);
+}
+
+.producto-card p {
+  font-size: 13px;
+  color: var(--lichen-sage);
+}
+
+/* -----------------------------------------------------------------
+   17. CONTACTO — información + formulario
+   ----------------------------------------------------------------- */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-56);
+}
+
+.info-card {
+  background-color: var(--bone-white);
+  border: 1px solid var(--soft-mist);
+  border-radius: var(--radius-card);
+  padding: var(--space-32);
+  margin-bottom: var(--space-16);
+}
+
+.info-card h3 {
+  margin-bottom: var(--space-8);
+  font-size: 15px;
+  color: var(--lichen-sage);
+  text-transform: none;
+}
+
+.info-card p,
+.info-card a {
+  font-size: 16px;
+  color: var(--onyx-olive);
+}
+
+.form-card {
+  background-color: var(--pure-white);
+  border: 1px solid var(--soft-mist);
+  border-radius: var(--radius-card);
+  padding: var(--space-40);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+}
+
+.form-field {
+  margin-bottom: var(--space-24);
+}
+
+.form-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--onyx-olive);
+  margin-bottom: var(--space-8);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--soft-mist);
+  border-radius: var(--radius-input);
+  padding: var(--space-16);
+  color: var(--onyx-olive);
+  background-color: var(--bone-white);
+  transition: border-color 0.2s ease;
+}
+
+.form-field textarea {
+  border-radius: var(--space-24);
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--electric-sprout);
+  background-color: var(--pure-white);
+}
+
+/* -----------------------------------------------------------------
+   18. RESPONSIVE
+   ----------------------------------------------------------------- */
+@media (max-width: 960px) {
+  h1 { font-size: 38px; }
+  .hero-copy h1 { font-size: 38px; }
+  h2 { font-size: 28px; }
+
+  .hero-grid,
+  .empresa-grid,
+  .linea-detalle,
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lineas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .servicios-grid,
+  .indicadores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-media {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-16);
+  }
+
+  .nav-pill {
+    justify-content: center;
+    padding: var(--space-16);
+  }
+
+  .main-nav {
+    justify-content: center;
+    width: 100%;
+    order: 3;
+  }
+
+  .section {
+    padding: var(--space-48) 0;
+  }
+
+  .lineas-grid,
+  .servicios-grid,
+  .indicadores-grid,
+  .footer-grid,
+  .form-row,
+  .producto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .cta-final-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-final {
+    padding: var(--space-32) var(--space-24);
+  }
+
+  .producto-card {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .producto-card__media {
+    width: 72px;
+    height: 72px;
+  }
+}
