@@ -117,10 +117,12 @@ h1, h2, h3 {
 
 h1 {
   font-size: 48px;
+  line-height: 1.08;
 }
 
 h2 {
   font-size: 34px;
+  line-height: 1.12;
 }
 
 h3 {
@@ -357,7 +359,8 @@ p {
 .hero {
   background-color: var(--forest-depths);
   color: var(--pure-white);
-  padding: var(--space-64) 0 var(--space-80);
+  margin-top: -96px;
+  padding: 160px 0 var(--space-80);
 }
 
 .hero-grid {
@@ -370,6 +373,7 @@ p {
 .hero-copy h1 {
   color: var(--pure-white);
   font-size: 52px;
+  line-height: 1.20;
   margin: var(--space-24) 0 var(--space-24);
 }
 
@@ -675,7 +679,14 @@ p {
 .page-header {
   background-color: var(--forest-depths);
   color: var(--pure-white);
-  padding: var(--space-64) 0 var(--space-56);
+
+  margin-top: -96px;
+  padding: 160px 0 96px;
+
+  min-height: 460px;
+
+  display: flex;
+  align-items: center;
 }
 
 .breadcrumb {
