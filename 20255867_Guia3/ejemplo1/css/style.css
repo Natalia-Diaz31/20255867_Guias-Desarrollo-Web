@@ -1,0 +1,389 @@
+:root {
+    --color-texto: #342e29;
+    --color-fondo: #f5efe6;
+    --color-principal: #293e36;
+    --color-acento: #93472f;
+    --color-superficie: #ffffff;
+    --color-contraste: #ead1ad;
+    --color-borde: #ded3c4;
+    --color-fondo-secundario: #eadfce;
+    --color-capa-inicial: rgba(25, 35, 29, 0.85);
+    --color-capa-final: rgba(25, 35, 29, 0.65);
+    --color-sombra: rgba(52, 46, 41, 0.10);
+}
+
+/*4. Escriba una regla para body que: 
+a) Elimine el margen predeterminado. 
+b) Utilice "Segoe UI", Arial, sans-serif. 
+c) Establezca un interlineado de 1.6. 
+d) Use las variables correspondientes para el color de texto y el fondo. */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*7. Configure los estilos de texto. Consiga los siguientes resultados: 
+a) h1, h2 y h3 deben utilizar un interlineado de 1.2. 
+b) h2 y h3 deben usar --color-principal. 
+c) Los enlaces deben usar --color-acento. 
+d) Durante :hover y :focus-visible, los enlaces deben cambiar a --color-principal. */
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2,
+h3 {
+    color: var(--color-principal);
+}
+
+a {
+    color: var(--color-acento);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--color-principal);
+}
+
+.encabezado-principal {
+    position: sticky;
+/*35. Pruebe position: sticky sin coordenada.
+a) ¿Permanece adherido el encabezado?
+R/ No de la forma esperada.
+b) ¿Qué información falta para indicar el punto de adhesión?
+R/ Falta indicar una coordenada, en este caso top: 0.*/
+    top: 0;
+    z-index: 10;
+/*37. ¿Por qué el encabezado necesita un valor superior al utilizado en las etiquetas?
+R/ Porque las etiquetas .continente tienen z-index: 1 y el encabezado
+debe mostrarse por encima de ellas, por eso usa z-index: 10.*/
+    color: var(--color-superficie);
+    background-color: var(--color-principal);
+}
+
+.marca {
+    color: var(--color-superficie);
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*9. Distribuya la barra con Flexbox. Convierta .barra-navegacion en un contenedor flexible. 
+Después, agregue las propiedades necesarias para: 
+a) Colocar la marca y la navegación en extremos opuestos. 
+b) Alinearlas en el centro del eje transversal. 
+c) Permitir el salto de línea (flex-wrap). 
+d) Aplicar un gap de 0.75rem 2rem. 
+e) Aplicar 1rem de relleno vertical. */
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    padding: 1rem 0;
+}
+
+/*10. Organice el menú: elimine el margen, el relleno y las viñetas de .menu. Luego, convierta la lista 
+en un contenedor flexible con una separación de 1rem y permita el salto de línea. Configure sus 
+enlaces con texto blanco y sin subrayado. Durante :hover y :focus-visible, utilice --color
+contraste.*/
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--color-superficie);
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    color: var(--color-contraste);
+}
+
+.presentacion {
+    padding: 4rem 0;
+    color: var(--color-superficie);
+    background-color: var(--color-principal);
+
+    background-image:
+        linear-gradient(
+            to right,
+            var(--color-capa-inicial),
+            var(--color-capa-final)
+        ),
+        url("../images/gran-muralla-china.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*13. Formatee el contenido de presentación. Agregue las reglas necesarias para obtener: 
+a) Un h1 con ancho máximo de 760px, margen inferior de 1rem y fuente de 2.5rem. 
+b) Párrafos con ancho máximo de 640px. 
+c) Un .sobretitulo de 0.85rem, en negrita, mayúsculas y color de acento. 
+d) El sobretítulo de la presentación en --color-contraste.*/
+.presentacion h1 {
+    max-width: 760px;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.presentacion p {
+    max-width: 640px;
+}
+
+.sobretitulo {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-acento);
+}
+
+.presentacion .sobretitulo {
+    color: var(--color-contraste);
+}
+
+/*14. Construya el botón principal. Estilice .boton-principal como un elemento inline-block con: 
+a) Margen superior de 1rem. 
+b) Relleno de 0.75rem 1.25rem. 
+c) Texto blanco sobre fondo de acento. 
+d) Radio de borde de 0.3rem. 
+e) Ausencia de subrayado. 
+Durante :hover y :focus-visible, intercambie los colores de texto y fondo por --color-principal y -
+color-contraste respectivamente.*/
+.boton-principal {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    color: var(--color-superficie);
+    background-color: var(--color-acento);
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+.boton-principal:hover,
+.boton-principal:focus-visible {
+    color: var(--color-principal);
+    background-color: var(--color-contraste);
+}
+
+/*15. Prepare la sección. Asigne 3rem de relleno vertical a .seccion-maravillas. Limite .titulo-seccion a 
+680px y aplique 2rem de margen inferior. Configure su h2 con margen 0 0 0.75rem y fuente de 
+2rem.*/
+.seccion-maravillas {
+    padding: 3rem 0;
+}
+
+.titulo-seccion {
+    max-width: 680px;
+    margin-bottom: 2rem;
+}
+
+.titulo-seccion h2 {
+    margin: 0 0 0.75rem;
+    font-size: 2rem;
+}
+
+.maravillas {
+    display: flex;
+    /*17. Permita el salto de línea. Agregue a .maravillas la propiedad de flexbox que permite distribuir los 
+artículos en varias filas. Visualice nuevamente la página y explique qué cambió. Si las tarjetas 
+todavía no poseen un tamaño adecuado, continúe con el paso siguiente. */
+    flex-wrap: wrap;
+    justify-content: center;
+/*19. Separe las tarjetas. Agregue gap: 1.5rem a .maravillas. Explique la diferencia entre el espacio 
+creado por gap y el relleno interior que posteriormente se aplicará a cada tarjeta. */
+    gap: 1.5rem;
+}
+/*20.Observe el crecimiento de la última tarjeta. Amplíe la ventana hasta que la última fila quede 
+incompleta. Observe el ancho de la última tarjeta. 
+a) ¿Por qué crece más que las tarjetas de una fila completa? 
+R// Porque en la última fila queda espacio libre y la tarjeta tiene permitido crecer para ocupar ese espacio.
+b) ¿Qué valor de flex permite ese crecimiento? 
+R// 1
+c) ¿Resulta visualmente conveniente que ocupe todo el espacio? 
+R// No, porque una tarjeta puede quedar mucho más ancha que las demás y romper la uniformidad visual.*/
+
+.maravilla {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 360px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px var(--color-sombra);
+    overflow: hidden;
+}
+
+.maravilla-imagen {
+    position: relative;
+}
+
+.maravilla img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+/*Observe las siete fotografías. Preste especial atención a Petra. 
+a) ¿Mantienen su proporción? 
+R// No, Las imagenesse ajustan forzadamente al ancho y alto establecidos, por lo que se deforman.
+b) ¿Qué diferencia se observa entre la fotografía vertical y las horizontales?
+R//La fotografía vertical de Petra se ve más deformada o estirada,
+porque su proporción original es diferente a la de las fotografías horizontales.*/
+
+
+
+/*25. Formatee el contenido de las tarjetas. Aplique 1.25rem de relleno a .maravilla-contenido. 
+Consiga además: 
+a) Una .ubicación sin margen, de 0.85rem de tamaño de fuente, en negrita y color de acento. 
+b) Un h3 de 1.35rem con margen 0.25rem 0 0.75rem. 
+c) Enlaces en negrita. */
+.continente {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    padding: 0.25rem 0.75rem;
+    color: var(--color-superficie);
+    background-color: var(--color-acento);
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.maravilla-contenido {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.25rem;
+}
+
+.ubicacion {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-acento);
+}
+
+.maravilla-contenido h3 {
+    margin: 0.25rem 0 0.75rem;
+    font-size: 1.35rem;
+}
+
+.maravilla-contenido a {
+    margin-top: auto;
+    align-items: flex-start;
+    font-weight: bold;
+}
+
+.volver-arriba {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20;
+/*38. a) ¿Cuál conserva su espacio original? 
+R// El encabezado con position: sticky
+b) ¿Cuál permanece ubicado respecto de la ventana desde el inicio? 
+R//El botón .volver-arriba con position: fixed*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    color: var(--color-superficie);
+    background-color: var(--color-acento);
+    border: 2px solid var(--color-superficie);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+/*40. Organice la sección histórica. Asigne a .seccion-historia un relleno vertical de 3rem y fondo -
+color-fondo-secundario. 
+Convierta .historia-contenido en un contenedor flexible que: 
+a) Permita el salto de línea. 
+b) Mantenga 2rem de separación. 
+c) Alinee los elementos en el centro del eje transversal. */
+.seccion-historia {
+    padding: 3rem 0;
+    background-color: var(--color-fondo-secundario);
+}
+
+.historia-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.historia-contenido > * {
+    flex: 1 1 300px;
+}
+/*41. Formatee el pie. Configure .pie-pagina con: 
+a) Relleno 2rem 0 5rem. 
+b) Texto de color --color-superficie. 
+c) Fondo --color-principal.*/
+.pie-pagina {
+    padding: 2rem 0 5rem;
+    color: var(--color-superficie);
+    background-color: var(--color-principal);
+}
+
+
+/* 27. a) ¿En qué dirección se desplazó la tarjeta?
+R/ 50px hacia la derecha y 30px hacia abajo.
+
+b) ¿Desde qué posición se calcula el desplazamiento?
+R/ Desde su posición original en el flujo normal.
+
+c) ¿Las demás tarjetas ocuparon su posición original?
+R/ Sí. El elemento con position: relative conserva su espacio original.
+
+d) ¿La tarjeta desplazada puede superponerse con otras?
+R/ Sí, puede superponerse porque visualmente se desplaza sin perder
+el espacio que ocupaba originalmente. 
+
+
+28. a) ¿Qué ocurrió con las demás tarjetas?
+R/ Se reorganizaron y ocuparon el espacio que dejó la segunda tarjeta.
+
+b) ¿Continúa reservado el espacio original de Petra?
+R/ No, porque position: absolute saca al elemento del flujo normal.
+
+c) ¿Respecto de qué área parecen calcularse top y left?
+R/ Respecto del antecesor posicionado más cercano. Si no existe,
+respecto del área inicial del documento.
+
+30. a) ¿Qué ocurrió con las demás tarjetas?
+R/ Se reorganizaron y ocuparon el espacio que dejó la segunda tarjeta.
+
+b) ¿Continúa reservado el espacio original de Petra?
+R/ No, porque position: absolute saca al elemento del flujo normal.
+
+c) ¿Respecto de qué área parecen calcularse top y left?
+R/ Respecto del antecesor posicionado más cercano. Si no existe,
+respecto del área inicial del documento.*/
