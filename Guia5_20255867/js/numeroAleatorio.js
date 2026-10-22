@@ -24,9 +24,11 @@
                 mensaje = `Su numero de intentos ha terminado.
                 El numero oculto era ${numeroAleatorio}. Refresque la página para volver a jugar.`;
             } else {
-                mensaje = `Vuelve a intentar. Quedan ${
-                    numeroIntentos - intentos
-                } intentos`;
+                 if (numero < numeroAleatorio) {
+                    mensaje = `El número que buscas es más alto. Quedan ${numeroIntentos - intentos} intentos`;
+                } else {
+                    mensaje = `El número que buscas es más bajo. Quedan ${numeroIntentos - intentos} intentos`;
+                }
             }
             
             //aumentamos el valor de los intentos

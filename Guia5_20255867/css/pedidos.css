@@ -1,0 +1,229 @@
+
+/* ===== FONDO DE LA PÁGINA ===== */
+body {
+    background-color: #fceaf1;
+    font-family: Arial, sans-serif;
+    color: #70465a;
+    margin: 0;
+    padding: 30px 15px;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+    background-color: white;
+    max-width: 950px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.encabezado h1 {
+    color: #b9507e;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.encabezado p {
+    color: #927887;
+    font-size: 16px;
+}
+
+.encabezado .subtitulo {
+    color: #b76d8c;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ===== IMAGEN DE CAFETERÍA ===== */
+.imagen-cafeteria {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 850px;
+    margin: 0 auto 25px auto;
+    border-radius: 15px;
+}
+
+/* ===== TARJETAS DE CADA SECCIÓN ===== */
+.tarjeta {
+    background-color: #fff7fa;
+    border: 1px solid #f4d5e2;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+/* ===== TÍTULOS DE LAS TARJETAS ===== */
+.tarjeta h3 {
+    color: #aa517b;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ===== TEXTOS ===== */
+.tarjeta p {
+    color: #927887;
+    font-size: 15px;
+}
+
+/* ===== ETIQUETAS DEL FORMULARIO ===== */
+.form-label {
+    color: #815568;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* ===== CAMPOS DEL FORMULARIO ===== */
+.form-control {
+    background-color: white;
+    border: 1px solid #ecc9d8;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* ===== PRECIO Y CANTIDAD EN UNA FILA ===== */
+.fila {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Cada campo ocupa el mismo espacio */
+.campo {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* Botón agregar */
+.btn-primary {
+    background-color: #c96892;
+    color: white;
+}
+
+/* Botón filtrar */
+.btn-success {
+    background-color: #c96892;
+    color: white;
+}
+
+/* Botón mostrar todos */
+.btn-secondary {
+    background-color: #efc0d4;
+    color: #7c4660;
+}
+
+/* Botón limpiar */
+.btn-danger {
+    background-color: #b65b7a;
+    color: white;
+}
+
+/* Efecto al pasar el mouse */
+.btn:hover {
+    background-color: #a94974;
+    color: white;
+}
+
+/* ===== ORGANIZACIÓN DE LOS BOTONES ===== */
+.botones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ===== TABLA DE PEDIDOS ===== */
+.table {
+    background-color: white;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* Encabezados de la tabla */
+.table thead th {
+    background-color: #fce6ef;
+    color: #8f4d6a;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Celdas de la tabla */
+.table td {
+    text-align: center;
+    padding: 12px;
+}
+
+/* ===== TARJETAS DE TOTALES ===== */
+.total {
+    background-color: #fff1f6;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Título de cada total */
+.total p {
+    color: #927082;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Número de unidades y monto total */
+.total h2 {
+    color: #b9507e;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ===== ENLACE PARA REGRESAR ===== */
+.regresar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.regresar a {
+    color: #b9507e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.regresar a:hover {
+    text-decoration: underline;
+}
+
+/* ===== AJUSTES PARA PANTALLAS PEQUEÑAS ===== */
+@media (max-width: 600px) {
+    .fila {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .encabezado h1 {
+        font-size: 32px;
+    }
+
+    .tarjeta {
+        padding: 15px;
+    }
+}
