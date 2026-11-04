@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de estudiantes</title>
+
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/stylesFunciones.css" rel="stylesheet">
+    <link rel="icon" href="../img/js.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="px-3 py-2 text-bg-dark">
+            <div class="container">
+                <a href="../indexFunciones.html"
+                    class="text-white text-decoration-none">
+                    <img src="../img/js.png" width="32" height="32" alt="JavaScript">
+                    Validación de estudiantes
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <div class="bg-light border rounded-3 p-4">
+                    <h2>Ficha de estudiante</h2>
+                    <p>
+                        Complete los siguientes campos para validar
+                        la información del estudiante.
+                    </p>
+
+                    <form id="idFormEstudiante" novalidate>
+
+                        <div class="mb-3">
+                            <label for="idCarnet" class="form-label">
+                                Carnet
+                            </label>
+                            <input type="text" class="form-control"
+                                id="idCarnet" placeholder="AB001">
+                            <small>Dos letras y tres números.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idNombre" class="form-label">
+                                Nombre completo
+                            </label>
+                            <input type="text" class="form-control"
+                                id="idNombre" placeholder="Nombre y apellidos">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idDui" class="form-label">
+                                Número de DUI
+                            </label>
+                            <input type="text" class="form-control"
+                                id="idDui" placeholder="12345678-9">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idNit" class="form-label">
+                                Número de NIT
+                            </label>
+                            <input type="text" class="form-control"
+                                id="idNit" placeholder="1234-123456-123-1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idFecha" class="form-label">
+                                Fecha de nacimiento
+                            </label>
+                            <input type="text" class="form-control"
+                                id="idFecha" placeholder="DD/MM/AAAA">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idCorreo" class="form-label">
+                                Correo electrónico
+                            </label>
+                            <input type="email" class="form-control"
+                                id="idCorreo" placeholder="ejemplo@correo.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idEdad" class="form-label">
+                                Edad
+                            </label>
+                            <input type="text" class="form-control"
+                                id="idEdad" placeholder="Ingrese la edad">
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-check-circle"></i>
+                            Validar estudiante
+                        </button>
+
+                        <button type="reset" class="btn btn-secondary">
+                            Limpiar
+                        </button>
+
+                    </form>
+
+                    <div id="idResultado" class="mt-4"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/validacionEstudiantes.js" defer></script>
+</body>
+</html>

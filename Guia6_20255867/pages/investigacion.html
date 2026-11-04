@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación - Expresiones regulares</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fcf8ff;
+            color: #51475c;
+        }
+
+        header {
+            background: #e9d7f3;
+            text-align: center;
+            padding: 65px 25px;
+        }
+
+        header h1 {
+            color: #70468e;
+            font-size: 40px;
+            margin: 18px 0;
+        }
+
+        header p {
+            color: #806b8f;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .etiqueta {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #9166ae;
+        }
+
+        main {
+            max-width: 850px;
+            width: 90%;
+            margin: 45px auto;
+            background: white;
+            padding: 45px;
+            border: 1px solid #eadcf2;
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(140, 90, 170, 0.08);
+        }
+
+        h2 {
+            color: #8859a8;
+            margin-top: 38px;
+            margin-bottom: 15px;
+        }
+
+        p, li {
+            line-height: 1.85;
+        }
+
+        .ejemplo {
+            background: #f5edfa;
+            border-left: 4px solid #b68bd2;
+            padding: 20px;
+            border-radius: 9px;
+            margin: 25px 0;
+        }
+
+        .ejemplo p {
+            margin-bottom: 0;
+        }
+
+        code {
+            color: #754a95;
+            font-family: Consolas, monospace;
+        }
+
+        pre {
+            background: #f5edfa;
+            padding: 18px;
+            border-radius: 9px;
+            overflow-x: auto;
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 22px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #e8d9f0;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        th {
+            background: #eddef5;
+            color: #754a95;
+        }
+
+        tr:nth-child(even) {
+            background: #fcf8ff;
+        }
+
+        .referencias p {
+            margin-bottom: 18px;
+            padding-left: 25px;
+            text-indent: -25px;
+            overflow-wrap: anywhere;
+        }
+
+        a {
+            color: #8859a8;
+        }
+
+        footer {
+            background: #e9d7f3;
+            color: #765a88;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                width: 94%;
+                padding: 22px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p class="etiqueta">DESARROLLO WEB I · GUÍA 06</p>
+        <h1>Expresiones regulares en JavaScript</h1>
+        <p>
+            Investigación teórica y aplicación
+            en la validación de formularios web
+        </p>
+        <p>Natalia Jimena Díaz Beltrán · 20255867</p>
+    </header>
+
+    <main>
+
+        <h2>Introducción</h2>
+
+        <p>
+            La validación de datos es una parte importante
+            del desarrollo web, ya que permite comprobar
+            si la información ingresada en un formulario
+            cumple con los requisitos establecidos.
+            Según MDN Web Docs (s. f.-d), la validación
+            realizada en el navegador permite identificar
+            errores y orientar al usuario para corregirlos
+            antes de enviar la información.
+        </p>
+
+        <p>
+            Una de las herramientas utilizadas para esta
+            tarea son las expresiones regulares, las cuales
+            permiten definir patrones para identificar y
+            comprobar determinadas combinaciones de
+            caracteres dentro de cadenas de texto
+            (MDN Web Docs, s. f.-a).
+        </p>
+
+        <h2>¿Qué son las expresiones regulares?</h2>
+
+        <p>
+            Las expresiones regulares, también conocidas
+            como RegExp o regex, son patrones utilizados
+            para encontrar coincidencias de caracteres
+            en cadenas de texto. En JavaScript, estas
+            expresiones son objetos que permiten realizar
+            búsquedas y trabajar con información textual
+            mediante distintos métodos
+            (MDN Web Docs, s. f.-a).
+        </p>
+
+        <p>
+            Su principal característica es que permiten
+            definir una estructura que debe cumplir un
+            texto, sin necesidad de comprobar cada
+            carácter individualmente. Esto facilita
+            actividades como la búsqueda de información,
+            la sustitución de texto y la validación
+            de datos ingresados por los usuarios.
+        </p>
+
+        <div class="ejemplo">
+            <strong>Ejemplo práctico</strong>
+            <p>
+                Si un carnet estudiantil debe contener
+                dos letras seguidas de tres números,
+                una expresión regular puede comprobar
+                que tenga esa estructura.
+            </p>
+
+            <p><code>/^[A-Za-z]{2}[0-9]{3}$/</code></p>
+
+            <p>
+                <strong>AB001:</strong> formato correcto.<br>
+                <strong>ABC001:</strong> formato incorrecto.
+            </p>
+        </div>
+
+        <h2>¿Cómo funcionan en JavaScript?</h2>
+
+        <p>
+            Para utilizar expresiones regulares, primero
+            se establece un patrón que describe los
+            caracteres permitidos y su organización.
+            Después, se compara el patrón con una cadena
+            de texto para determinar si existe una
+            coincidencia.
+        </p>
+
+        <p>
+            MDN Web Docs (s. f.-a) explica que existen
+            dos formas principales de crear expresiones
+            regulares en JavaScript: utilizando una
+            expresión literal entre barras diagonales
+            o mediante el constructor RegExp.
+        </p>
+
+        <pre><code>// Expresión regular literal
+const patron = /abc/;
+
+// Utilizando el constructor RegExp
+const patron2 = new RegExp("abc");</code></pre>
+
+        <p>
+            Los patrones pueden combinar letras, números
+            y caracteres especiales. Estos últimos
+            permiten establecer condiciones como
+            cantidades de repeticiones, grupos de
+            caracteres y posiciones dentro del texto
+            (MDN Web Docs, s. f.-b).
+        </p>
+
+        <h2>Principales elementos de una expresión regular</h2>
+
+        <p>
+            Los siguientes símbolos permiten construir
+            algunos de los patrones más utilizados
+            en JavaScript (MDN Web Docs, s. f.-b).
+        </p>
+
+        <table>
+            <tr>
+                <th>Símbolo</th>
+                <th>Función</th>
+            </tr>
+            <tr>
+                <td><code>^</code></td>
+                <td>Indica el inicio de la cadena.</td>
+            </tr>
+            <tr>
+                <td><code>$</code></td>
+                <td>Indica el final de la cadena.</td>
+            </tr>
+            <tr>
+                <td><code>[A-Za-z]</code></td>
+                <td>Representa letras mayúsculas y minúsculas sin tildes.</td>
+            </tr>
+            <tr>
+                <td><code>[0-9]</code></td>
+                <td>Representa dígitos del 0 al 9.</td>
+            </tr>
+            <tr>
+                <td><code>{n}</code></td>
+                <td>Indica una cantidad exacta de repeticiones.</td>
+            </tr>
+            <tr>
+                <td><code>+</code></td>
+                <td>Indica una o más repeticiones.</td>
+            </tr>
+            <tr>
+                <td><code>*</code></td>
+                <td>Indica cero o más repeticiones.</td>
+            </tr>
+            <tr>
+                <td><code>?</code></td>
+                <td>Indica cero o una repetición.</td>
+            </tr>
+        </table>
+
+        <h2>Métodos para utilizar expresiones regulares</h2>
+
+        <p>
+            JavaScript proporciona diferentes métodos
+            para trabajar con expresiones regulares.
+            Entre ellos se encuentran test(), exec(),
+            match(), search() y replace(), que permiten
+            comprobar coincidencias, buscar información
+            o reemplazar contenido dentro de cadenas
+            de texto (MDN Web Docs, s. f.-a).
+        </p>
+
+        <p>
+            Para la validación de formularios, uno de los
+            métodos más útiles es <strong>test()</strong>.
+            Este método comprueba si una cadena coincide
+            con una expresión regular y devuelve un
+            valor booleano: true cuando encuentra una
+            coincidencia y false cuando no la encuentra
+            (MDN Web Docs, s. f.-c).
+        </p>
+
+        <pre><code>const regexCarnet = /^[A-Za-z]{2}[0-9]{3}$/;
+
+regexCarnet.test("AB001");  // true
+regexCarnet.test("ABC001"); // false</code></pre>
+
+        <p>
+            En este ejemplo, el primer valor cumple
+            con las reglas del patrón, mientras que
+            el segundo contiene una letra adicional.
+            Por esa razón, los resultados son diferentes.
+        </p>
+
+        <h2>Aplicación en formularios web</h2>
+
+        <p>
+            Las expresiones regulares se utilizan
+            frecuentemente para validar el formato
+            de los datos ingresados en formularios.
+            Pueden ayudar a verificar información
+            como correos electrónicos, códigos de
+            identificación y campos que requieren
+            números o letras en un orden específico.
+        </p>
+
+        <p>
+            MDN Web Docs (s. f.-d) señala que la
+            validación del lado del cliente permite
+            ofrecer una respuesta más inmediata al
+            usuario cuando introduce información
+            que no cumple con los requisitos.
+        </p>
+
+        <p>
+            En la Guía de Laboratorio N.º 6 se
+            solicita desarrollar una ficha de
+            estudiante que valide siete datos
+            mediante expresiones regulares
+            (Escuela Superior de Economía y
+            Negocios [ESEN], 2026, p. 34).
+        </p>
+
+        <table>
+            <tr>
+                <th>Campo</th>
+                <th>Formato solicitado</th>
+            </tr>
+            <tr>
+                <td>Carnet</td>
+                <td>Dos letras y tres números: AB001.</td>
+            </tr>
+            <tr>
+                <td>Nombre completo</td>
+                <td>Letras y espacios, sin números ni caracteres especiales.</td>
+            </tr>
+            <tr>
+                <td>DUI</td>
+                <td>Ocho dígitos, guion y un dígito.</td>
+            </tr>
+            <tr>
+                <td>NIT</td>
+                <td>Cuatro, seis, tres y un dígito separados por guiones.</td>
+            </tr>
+            <tr>
+                <td>Fecha de nacimiento</td>
+                <td>Día, mes y año.</td>
+            </tr>
+            <tr>
+                <td>Correo electrónico</td>
+                <td>Formato de correo electrónico.</td>
+            </tr>
+            <tr>
+                <td>Edad</td>
+                <td>Únicamente números.</td>
+            </tr>
+        </table>
+
+        <h2>Relación con lo aprendido en clase</h2>
+
+        <p>
+            La implementación de expresiones regulares
+            puede relacionarse con el uso de funciones
+            y eventos en JavaScript.
+        </p>
+
+        <p>
+            En la presentación de la Clase 12,
+            Calderón (s. f., diap. 2) explica
+            que las funciones son bloques de código
+            reutilizables que permiten organizar
+            las instrucciones de un programa.
+        </p>
+
+        <p>
+            Asimismo, el método addEventListener()
+            permite asociar una función con un evento
+            específico para que se ejecute cuando
+            dicho evento ocurra
+            (Calderón, s. f., diap. 59).
+        </p>
+
+        <p>
+            Por ello, al validar un formulario podemos
+            crear una función que compruebe los datos
+            mediante expresiones regulares y ejecutarla
+            cuando el usuario envíe el formulario.
+        </p>
+
+        <div class="ejemplo">
+            <strong>Relación entre los conceptos</strong>
+            <p>
+                La expresión regular define el patrón,
+                la función realiza la validación y
+                el evento permite ejecutar esa función
+                cuando el usuario interactúa con
+                el formulario.
+            </p>
+        </div>
+
+        <h2>Ventajas y limitaciones</h2>
+
+        <p>
+            Una de las principales ventajas de las
+            expresiones regulares es que permiten
+            comprobar estructuras de texto utilizando
+            patrones reutilizables. También facilitan
+            la identificación de errores de formato
+            en los datos ingresados.
+        </p>
+
+        <p>
+            Sin embargo, no todas las validaciones
+            pueden resolverse únicamente mediante
+            expresiones regulares. Por ejemplo,
+            comprobar que una fecha exista realmente
+            puede requerir operaciones adicionales.
+        </p>
+
+        <p>
+            Además, MDN Web Docs (s. f.-d) advierte
+            que la validación del lado del cliente
+            no sustituye a la validación del servidor,
+            ya que los controles del navegador pueden
+            ser omitidos o manipulados.
+        </p>
+
+        <h2>Conclusión</h2>
+
+        <p>
+            Las expresiones regulares son una herramienta
+            importante en JavaScript porque permiten
+            establecer patrones para identificar,
+            analizar y validar cadenas de texto.
+            Su utilización facilita la comprobación
+            de formatos y ayuda a detectar errores
+            al completar formularios.
+        </p>
+
+        <p>
+            A través de esta investigación se comprende
+            que las expresiones regulares pueden
+            combinarse con funciones y eventos para
+            desarrollar validaciones más organizadas.
+            También es importante reconocer que
+            comprobar un formato no siempre significa
+            verificar la autenticidad de los datos.
+        </p>
+
+        <p>
+            Los conceptos investigados se aplican
+            en el formulario de estudiantes
+            desarrollado como parte de los
+            ejercicios complementarios de la Guía 06.
+        </p>
+
+        <h2>Referencias bibliográficas</h2>
+
+        <div class="referencias">
+
+            <p>
+                Calderón, G. (s. f.).
+                <em>Clase 12: Funciones y eventos</em>
+                [Diapositivas de PowerPoint].
+                Escuela Superior de Economía y Negocios.
+                Material de clase.
+            </p>
+
+            <p>
+                Escuela Superior de Economía y Negocios.
+                (2026).
+                <em>Guía de laboratorio N.º 6:
+                Funciones y eventos en JS</em>
+                [Guía de laboratorio].
+            </p>
+
+            <p>
+                MDN Web Docs. (s. f.-a).
+                <em>Expresiones regulares.</em>
+                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions"
+                    target="_blank" rel="noopener noreferrer">
+                    https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions
+                </a>
+            </p>
+
+            <p>
+                MDN Web Docs. (s. f.-b).
+                <em>Hoja de referencia de sintaxis de expresiones regulares.</em>
+                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet"
+                    target="_blank" rel="noopener noreferrer">
+                    https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet
+                </a>
+            </p>
+
+            <p>
+                MDN Web Docs. (s. f.-c).
+                <em>RegExp.prototype.test().</em>
+                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"
+                    target="_blank" rel="noopener noreferrer">
+                    https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+                </a>
+            </p>
+
+            <p>
+                MDN Web Docs. (s. f.-d).
+                <em>Validación de formularios en el lado del cliente.</em>
+                <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Forms/Form_validation"
+                    target="_blank" rel="noopener noreferrer">
+                    https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Forms/Form_validation
+                </a>
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Desarrollo Web I · Guía 06</p>
+        <p>Investigación sobre expresiones regulares en JavaScript</p>
+    </footer>
+
+</body>
+</html>
