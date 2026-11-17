@@ -1,0 +1,739 @@
+:root {
+    --negro: #241e22;
+    --vino: #8d344c;
+    --rosa: #e9ced5;
+    --rosa-claro: #f4e8eb;
+    --crema: #fcf9f6;
+    --blanco: #ffffff;
+    --gris: #80777a;
+    --borde: #e7dcdf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--crema);
+    color: var(--negro);
+    font-family: "DM Sans", sans-serif;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 7%;
+    border-bottom: 1px solid var(--borde);
+}
+
+.volver,
+.numero {
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.volver:hover {
+    color: var(--vino);
+}
+
+.logo {
+    color: var(--negro);
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.logo span {
+    color: var(--vino);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 570px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 65px;
+    padding: 85px 11%;
+    background: var(--rosa);
+}
+
+.etiqueta {
+    color: var(--vino);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.portada h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(100px, 14vw, 175px);
+    font-weight: 500;
+    letter-spacing: -12px;
+    line-height: 1;
+    margin: 25px 0;
+}
+
+.portada h1 > span:first-child {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.punto {
+    color: var(--vino);
+}
+
+.portada-frase {
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.portada-descripcion {
+    max-width: 470px;
+    color: #66545a;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.boton-explorar {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+    padding: 18px 25px;
+    background: var(--negro);
+    color: var(--blanco);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.boton-explorar:hover {
+    background: var(--vino);
+    transform: translateY(-3px);
+}
+
+.boton-explorar span {
+    font-size: 20px;
+}
+
+/* DECORACION DE PORTADA */
+
+.portada-arte {
+    text-align: center;
+}
+
+.marco {
+    position: relative;
+    min-height: 370px;
+    border: 1px solid rgba(141, 52, 76, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(-5deg);
+}
+
+.imagen-portada-nana {
+    width: 85%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+    margin-bottom: 18px;
+    border: 6px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 25px rgba(60, 30, 40, 0.12);
+}
+
+
+.kanji {
+    color: var(--vino);
+    font-size: clamp(100px, 12vw, 165px);
+    font-weight: 700;
+    letter-spacing: -10px;
+}
+
+.marco-subtitulo {
+    color: var(--vino);
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-style: italic;
+}
+
+.fresa {
+    position: absolute;
+    right: -20px;
+    bottom: -25px;
+    font-size: 65px;
+    transform: rotate(15deg);
+}
+
+.detalle-arte {
+    display: block;
+    margin-top: 35px;
+    color: var(--vino);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* FRANJA DECORATIVA */
+
+.franja {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: var(--vino);
+    color: var(--blanco);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.franja span:nth-child(even) {
+    color: var(--rosa);
+    font-size: 18px;
+}
+
+/* CATALOGO */
+
+.catalogo {
+    max-width: 1250px;
+    margin: auto;
+    padding: 100px 35px;
+}
+
+.catalogo-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.catalogo h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 62px);
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin: 15px 0;
+}
+
+.catalogo h2 em {
+    color: var(--vino);
+}
+
+.catalogo-encabezado p {
+    max-width: 540px;
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.contador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+    border-left: 1px solid var(--borde);
+    color: var(--vino);
+}
+
+.contador > span {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+}
+
+.contador small {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* BUSCADOR Y BOTON */
+
+.herramientas {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.buscador {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    border: 1px solid var(--borde);
+    background: var(--blanco);
+}
+
+.buscador span {
+    color: var(--vino);
+    font-size: 28px;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 18px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+}
+
+.buscador:focus-within {
+    border-color: var(--vino);
+}
+
+.boton-recargar {
+    padding: 0 25px;
+    border: none;
+    background: var(--vino);
+    color: var(--blanco);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.boton-recargar:hover {
+    background: var(--negro);
+}
+
+.boton-recargar:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.estado {
+    padding: 20px;
+    color: var(--vino);
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.estado:empty {
+    display: none;
+}
+
+/* TARJETAS DE PERSONAJES */
+
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    padding: 0;
+    border: 1px solid var(--borde);
+    background: var(--blanco);
+    color: var(--negro);
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(60, 30, 40, 0.12);
+}
+
+.tarjeta-imagen {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background: var(--rosa-claro);
+}
+
+.tarjeta-imagen img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.05);
+}
+
+.tarjeta-numero {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    padding: 8px 11px;
+    background: var(--crema);
+    color: var(--vino);
+    font-size: 11px;
+}
+
+.tarjeta-info {
+    padding: 22px 19px;
+}
+
+.tarjeta-papel {
+    color: var(--vino);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.tarjeta-info h3 {
+    margin: 12px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.tarjeta-accion {
+    margin-top: 20px;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.tarjeta:hover .tarjeta-accion {
+    color: var(--vino);
+}
+
+/* FICHA DE PERSONAJE */
+
+
+/* VENTANA DE DETALLE DEL PERSONAJE */
+
+.seccion-detalle {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(36, 30, 34, 0.75);
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.detalle-superior,
+#contenidoDetalle {
+    max-width: 950px;
+    margin: auto;
+    background: var(--rosa-claro);
+    padding: 25px 40px;
+}
+
+.detalle-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--borde);
+}
+
+#contenidoDetalle {
+    padding-bottom: 45px;
+}
+
+@media (max-width: 700px) {
+    .seccion-detalle {
+        padding: 20px 10px;
+    }
+
+    .detalle-superior,
+    #contenidoDetalle {
+        padding: 20px;
+    }
+}
+
+.detalle-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.boton-cerrar {
+    border: none;
+    background: transparent;
+    color: var(--vino);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ficha {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 50px;
+    align-items: start;
+}
+
+.ficha-imagen {
+    width: 100%;
+    max-height: 470px;
+    border: 8px solid var(--blanco);
+    background: var(--rosa);
+    object-fit: cover;
+    object-position: top;
+}
+
+.ficha h2 {
+    margin: 12px 0;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(37px, 5vw, 58px);
+    font-weight: 400;
+}
+
+.ficha-japones {
+    color: var(--vino);
+    font-size: 15px;
+}
+
+.ficha-descripcion {
+    max-height: 430px;
+    padding-right: 12px;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    color: #60565a;
+    font-size: 14px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.ficha-favoritos {
+    margin: 25px 0;
+    color: var(--vino);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ficha-enlace {
+    display: inline-block;
+    margin-top: 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--vino);
+    color: var(--vino);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* SECCION FINAL */
+
+.despedida {
+    padding: 90px 20px;
+    background: var(--rosa);
+    text-align: center;
+}
+
+.despedida > p:not(.despedida-texto) {
+    max-width: 850px;
+    margin: 25px auto;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.5;
+}
+
+.despedida em {
+    color: var(--vino);
+}
+
+.adorno {
+    font-size: 22px;
+}
+
+.despedida-texto {
+    max-width: 430px;
+    margin: 25px auto 0;
+    color: #725760;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    padding: 55px 8%;
+    background: var(--negro);
+    color: #d4c6cb;
+}
+
+footer .logo {
+    color: var(--blanco);
+}
+
+footer p {
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.footer-derecha {
+    text-align: right;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .portada {
+        padding: 75px 7%;
+        gap: 35px;
+    }
+
+    .cuadricula {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .encabezado {
+        padding: 20px;
+    }
+
+    .numero {
+        display: none;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .portada {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 65px 25px;
+    }
+
+    .portada h1 {
+        letter-spacing: -6px;
+    }
+
+    .portada-frase {
+        font-size: 22px;
+    }
+
+    .portada-arte {
+        display: none;
+    }
+
+    .franja {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .catalogo {
+        padding: 65px 18px;
+    }
+
+    .catalogo-encabezado {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .contador {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding-left: 0;
+        border: none;
+    }
+
+    .contador > span {
+        font-size: 35px;
+    }
+
+    .herramientas {
+        flex-direction: column;
+    }
+
+    .boton-recargar {
+        padding: 17px;
+    }
+
+    .cuadricula {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .tarjeta-imagen {
+        height: 230px;
+    }
+
+    .tarjeta-info {
+        padding: 15px 12px;
+    }
+
+    .tarjeta-info h3 {
+        font-size: 19px;
+    }
+
+    .seccion-detalle {
+        margin: 0 15px 65px;
+        padding: 22px;
+    }
+
+    .ficha {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .ficha-imagen {
+        max-width: 260px;
+    }
+
+    .despedida {
+        padding: 65px 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-derecha {
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .cuadricula {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-imagen {
+        height: 330px;
+    }
+}

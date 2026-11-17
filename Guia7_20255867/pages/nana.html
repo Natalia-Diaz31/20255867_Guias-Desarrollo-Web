@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NANA | Apartamento 707</title>
+
+    <link rel="stylesheet" href="../css/nana.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <a href="../index.html" class="volver">← VOLVER A LAS GUÍAS</a>
+
+        <a href="#" class="logo">NANA <span>707</span></a>
+
+        <span class="numero">TOKIO · 2000s</span>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+        <section class="portada">
+            <div class="portada-texto">
+
+                <span class="etiqueta">APARTAMENTO 707 · TOKIO</span>
+
+                <h1>NA<span>NA</span><span class="punto">.</span></h1>
+
+                <p class="portada-frase">
+                    Dos Nanas, un apartamento
+                    <br>
+                    y una historia imposible de olvidar.
+                </p>
+
+                <p class="portada-descripcion">
+                    Nana Osaki quería vivir de la música.
+                    Nana Komatsu quería encontrar el amor.
+                    Las dos terminaron compartiendo el apartamento 707
+                    y, sin saberlo, cambiándose la vida.
+                </p>
+
+                <a href="#catalogo" class="boton-explorar">
+                    CONOCER A LOS PERSONAJES <span>↗</span>
+                </a>
+            </div>
+            
+            <div class="marco">
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BYjRmOWJmMDgtYjBjMS00OTg1LWJmZTItZTY2MjJlODgxNmUwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                    alt="Imagen del anime NANA"
+                    class="imagen-portada-nana">
+
+                <span class="marco-subtitulo">Room 707</span>
+                <span class="fresa">🍓</span>
+            </div>
+        </section>
+
+        <!-- FRANJA -->
+        <div class="franja">
+            <span>707</span>
+            <span>✳</span>
+            <span>BLACK STONES</span>
+            <span>✳</span>
+            <span>TRAPNEST</span>
+            <span>✳</span>
+            <span>ナナ</span>
+        </div>
+
+        <!-- CATALOGO DE PERSONAJES -->
+        <section class="catalogo" id="catalogo">
+
+            <div class="catalogo-encabezado">
+                <div>
+                    <span class="etiqueta">01 / PERSONAJES</span>
+
+                    <h2>Los personajes <em>de NANA.</em></h2>
+
+                    <p>
+                        De Black Stones a Trapnest, pasando por el apartamento 707.
+                        Estas son las personas que forman parte de la historia.
+                    </p>
+                </div>
+
+                <div class="contador">
+                    <span id="totalPersonajes">—</span>
+                    <small>PERSONAJES</small>
+                </div>
+            </div>
+
+            <!-- BUSCADOR -->
+            <div class="herramientas">
+                <div class="buscador">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="buscarPersonaje"
+                        placeholder="Buscar por nombre..."
+                        aria-label="Buscar personaje">
+                </div>
+
+                <button type="button" id="btnRecargar" class="boton-recargar">
+                    ↻ ACTUALIZAR
+                </button>
+            </div>
+
+            <!-- ESTADO DE LA API -->
+            <p id="estado" class="estado" role="status" aria-live="polite">
+                Cargando personajes...
+            </p>
+
+            <!-- PERSONAJES GENERADOS CON DOM -->
+            <div id="listaPersonajes" class="cuadricula"></div>
+
+        </section>
+
+        <section id="seccionDetalle" class="seccion-detalle" hidden>
+
+            <div class="detalle-superior">
+                <span class="etiqueta">02 / SOBRE EL PERSONAJE</span>
+
+                <button type="button" id="btnCerrar" class="boton-cerrar">
+                    ✕ CERRAR
+                </button>
+            </div>
+
+            <div id="contenidoDetalle"></div>
+
+        </section>
+
+        <section class="despedida">
+            <span class="etiqueta">APARTAMENTO 707</span>
+
+            <p>
+                ¿Te acordás de Nana?
+                <em>Yo todavía me acuerdo.</em>
+            </p>
+
+            <span class="adorno">🍓</span>
+
+            <p class="despedida-texto">
+                Un apartamento pequeño, vasos con fresas
+                y dos chicas que se encontraron en Tokio.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <div>
+            <span class="logo">NANA <span>707</span></span>
+            <p>Un pequeño rincón dedicado a NANA, de Ai Yazawa.</p>
+        </div>
+
+        <div class="footer-derecha">
+            <p>DESARROLLO WEB I · GUÍA 07</p>
+            <p>Información e imágenes: AniList API</p>
+        </div>
+    </footer>
+
+    <script src="../js/nana.js" defer></script>
+
+</body>
+
+</html>
